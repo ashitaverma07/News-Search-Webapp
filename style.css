@@ -55,6 +55,16 @@ nav {
 }
 
 #blog-container{
-    margin: 3rem 0;
+    padding: 3rem 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* flex-wrap: wrap; */
+}
 
+.blog-card{
+    width: 300px;
+    border: 1px solid #10525b;
+    border-radius: 10px;
+    cursor: pointer;
 }
