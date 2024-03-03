@@ -59,7 +59,7 @@ nav {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
 }
 
 .blog-card{
@@ -67,4 +67,12 @@ nav {
     border: 1px solid #10525b;
     border-radius: 10px;
     cursor: pointer;
+    padding: 1rem;
+    margin: 10px;
+}
+
+.blog-card img{
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
 }
