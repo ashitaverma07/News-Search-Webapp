@@ -6,7 +6,12 @@
 
 body {
     position: relative;
+}
 
+/* global CSS */
+.obj-width{
+    max-width: 1200px;
+    margin: auto;
 }
 
 nav {
@@ -47,4 +52,9 @@ nav {
     cursor: pointer;
     border-radius: 5px;
     margin-left: 10px;
+}
+
+#blog-container{
+    margin: 3rem 0;
+
 }
