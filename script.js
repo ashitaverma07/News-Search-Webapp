@@ -4,7 +4,7 @@ const blogContainer = document.getElementById("blog-container");
 
 function fetchRandom() {
     try {
-        const apiUrl = `https://newsapi.org/v2/top-headlines?country=us`
+        const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&pageSize=10&apiKey=${apiKey}`;
     }
     catch (error) {
         console.error("Error fetching random news", error)
