@@ -1,4 +1,4 @@
-const apiKey = 'd95d490989384d94a4c489244c84e788';
+const apiKey = "d95d490989384d94a4c489244c84e788";
 
 const blogContainer = document.getElementById("blog-container");
 
@@ -27,15 +27,20 @@ function displayBlogs(articles) {
         title.textContent = artilce.title
         const description = document.createElement("p")
         description.textContent = artilce.description
+
+        blogCard.appendChild(img)
+        blogCard.appendChild(title)
+        blogCard.appendChild(description)
+        blogContainer.appendChild(blogCard)
     })
 }
 
 
-async () => {
+(async () => {
     try {
         const articles = await fetchRandomNews();
         displayBlogs(articles);
     } catch (error) {
         console.error("Error fetching random news", error);
     }
-};
+})();
