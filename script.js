@@ -21,7 +21,7 @@ async function fetchRandomNews() {
 
 searchButton.addEventListener("click", async() => {
 
-    const query = searchField.ariaValueMax.trim()
+    const query = searchField.value.trim();
     if(query !== ""){
         try{
             const articles = await fetchNewsQuery(query)
@@ -34,7 +34,7 @@ searchButton.addEventListener("click", async() => {
 
 async function fetchNewsQuery(query) {
     try {
-        const apiUrl = `https://newsapi.org/v2/everything?q=&pageSize=10&apiKey=${apiKey}`;
+        const apiUrl = `https://newsapi.org/v2/everything?q=${query}&pageSize=10&apiKey=${apiKey}`;
         const response = await fetch(apiUrl)
         const data = await response.json()
         return data.articles;
