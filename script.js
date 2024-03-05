@@ -20,7 +20,7 @@ async function fetchRandomNews() {
 
 
 searchButton.addEventListener("click", async() => {
-    
+
     const query = searchField.ariaValueMax.trim()
     if(query !== ""){
         try{
@@ -31,6 +31,19 @@ searchButton.addEventListener("click", async() => {
         }
     }
 })
+
+async function fetchNewsQuery(query) {
+    try {
+        const apiUrl = `https://newsapi.org/v2/everything?q=&pageSize=10&apiKey=${apiKey}`;
+        const response = await fetch(apiUrl)
+        const data = await response.json()
+        return data.articles;
+    }
+    catch (error) {
+        console.error("Error fetching random news", error)
+        return []
+    }
+}
 
 
 function displayBlogs(articles) {
