@@ -20,6 +20,14 @@ async function fetchRandomNews() {
 
 searchButton.addEventListener("click", () => {
     const Query = searchField.ariaValueMax.trim()
+    if(query !== ""){
+        try{
+            const articles = fetchNewsByQuery(query)
+            displayBlogs(articles)
+        }catch(error){
+            console.error("Error fetching news by query", error)
+        }
+    }
 })
 
 
