@@ -2,6 +2,9 @@ const apiKey = "d95d490989384d94a4c489244c84e788";
 
 const blogContainer = document.getElementById("blog-container");
 
+const searchField = document.getElementById("search-input");
+const searchButton = document.getElementById("search-button");
+
 async function fetchRandomNews() {
     try {
         const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&pageSize=10&apiKey=${apiKey}`;
@@ -14,6 +17,11 @@ async function fetchRandomNews() {
         return []
     }
 }
+
+searchButton.addEventListener("click", () => {
+    const Query = searchField.ariaValueMax.trim()
+})
+
 
 function displayBlogs(articles) {
     blogContainer.innerHTML = ""
