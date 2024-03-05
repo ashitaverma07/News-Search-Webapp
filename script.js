@@ -18,11 +18,13 @@ async function fetchRandomNews() {
     }
 }
 
-searchButton.addEventListener("click", () => {
-    const Query = searchField.ariaValueMax.trim()
+
+searchButton.addEventListener("click", async() => {
+    
+    const query = searchField.ariaValueMax.trim()
     if(query !== ""){
         try{
-            const articles = fetchNewsByQuery(query)
+            const articles = await fetchNewsQuery(query)
             displayBlogs(articles)
         }catch(error){
             console.error("Error fetching news by query", error)
@@ -45,7 +47,6 @@ function displayBlogs(articles) {
         const description = document.createElement("p")
         const truncatedDes = artilce.description.length > 120 ? artilce.description.slice(0, 120) + "...." : artilce.description;
         description.textContent = truncatedDes;
-
 
         blogCard.appendChild(img)
         blogCard.appendChild(title)
